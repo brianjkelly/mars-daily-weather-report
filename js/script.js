@@ -6,19 +6,19 @@ let weatherData;
 
 /*----- cached element references -----*/
 
-const $date = $('#date');
-const $sol = $('#sol');
-const $season = $('#season');
-const $maxTemp = $('#maxTemp');
-const $avgTemp = $('#avgTemp');
-const $minTemp = $('#minTemp');
-const $maxWind = $('#maxWind');
-const $avgWind = $('#avgWind');
-const $minWind = $('#minWind');
-const $dirWind = $('#dirWind');
-const $maxPa = $('#maxPa');
-const $avgPa = $('#avgPa');
-const $minPa = $('#minPa');
+const $date = $('#dateVal');
+const $sol = $('#solVal');
+const $season = $('#seasonVal');
+const $maxTemp = $('#maxTempVal');
+const $avgTemp = $('#avgTempVal');
+const $minTemp = $('#minTempVal');
+const $maxWind = $('#maxWindVal');
+const $avgWind = $('#avgWindVal');
+const $minWind = $('#minWindVal');
+const $dirWind = $('#dirWindVal');
+const $maxPa = $('#maxPaVal');
+const $avgPa = $('#avgPaVal');
+const $minPa = $('#minPaVal');
 
 /*----- event listeners -----*/
 
