@@ -3,34 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./styles/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer src="./js/script.js"></script>
     <title>Mars Daily Weather Report</title>
 </head>
 <body>
+    
     <header>
-        <h1>Mars Daily Weather Report</h1>
+        <h1>MARS | Elysium Planitia</h1>
     </header>
 
     <main>
-        <h3>Time</h3>
-        <p id="date"></p>
-        <p id="sol"></p>
-        <p id="season"></p>
-        <h3>Air Temperature (°F | °C)</h3>
-        <p id="maxTemp"></p>
-        <p id="avgTemp"></p>
-        <p id="minTemp"></p>
-        <h3>Wind Speed (mph | m/s)</h3>
-        <p id="maxWind"></p>
-        <p id="avgWind"></p>
-        <p id="minWind"></p>
-        <p id="dirWind"></p>
-        <h3>Pressure (Pa)</h3>
-        <p id="maxPa"></p>
-        <p id="avgPa"></p>
-        <p id="minPa"></p>
+
+        <h2>Daily Weather Report</h2>
+
+        <table id="weatherTable">
+            <thead>
+                <tr>
+                    <th colspan="3">Time</th>
+                    <th colspan="3">Air Temperature (°F | °C)</th>
+                    <th colspan="4">Wind Speed (mph | m/s)</th>
+                    <th colspan="3">Pressure (Pa)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="tblTop">
+                    <td class="date">Date</td>
+                    <td class="sol">Sol</td>
+                    <td class="season">Season</td>
+                    <td class="maxTemp">Max.</td>
+                    <td class="avgTemp">Avg.</td>
+                    <td class="minTemp">Min.</td>
+                    <td class="maxWind">Max.</td>
+                    <td class="avgWind">Avg.</td>
+                    <td class="minWind">Min.</td>
+                    <td class="dirWind">Direction</td>
+                    <td class="maxPa">Max.</td>
+                    <td class="avgPa">Avg.</td>
+                    <td class="minPa">Min.</td>
+                </tr>
+                <tr id="tblData">
+                    <td class="date" id="dateVal"></td>
+                    <td class="sol" id="solVal"></td>
+                    <td class="season" id="seasonVal"></td>
+                    <td class="maxTemp" id="maxTempVal"></td>
+                    <td class="avgTemp" id="avgTempVal"></td>
+                    <td class="minTemp" id="minTempVal"></td>
+                    <td class="maxWind" id="maxWindVal"></td>
+                    <td class="avgWind" id="avgWindVal"></td>
+                    <td class="minWind" id="minWindVal"></td>
+                    <td class="dirWind" id="dirWindVal"></td>
+                    <td class="maxPa" id="maxPaVal"></td>
+                    <td class="avgPa" id="avgPaVal"></td>
+                    <td class="minPa" id="minPaVal"></td>
+                </tr>
+            </tbody>
+        </table>
+
     </main>
 
     <footer>
