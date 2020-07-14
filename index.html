@@ -3,73 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Link to local CSS -->
     <link rel="stylesheet" href="./styles/style.css">
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Local JS -->
     <script defer src="./js/script.js"></script>
-    <title>Mars Daily Weather Report</title>
+    <title>Mars Daily Weather Report</title>  
 </head>
 <body>
-    
+
     <header>
-        <h1>MARS | Elysium Planitia</h1>
+        <span class="blue-grey-text text-lighten-5">
+            <h1>MARS | Elysium Planitia</h1>
+        </span>
     </header>
 
     <main>
+        <span class="blue-grey-text text-lighten-5">
+            <h2>Daily Weather Report</h2>
 
-        <h2>Daily Weather Report</h2>
-
-        <table id="weatherTable">
-            <thead>
-                <tr>
-                    <th colspan="3">Time</th>
-                    <th colspan="3">Air Temperature (°F | °C)</th>
-                    <th colspan="4">Wind Speed (mph | m/s)</th>
-                    <th colspan="3">Pressure (Pa)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr id="tblTop">
-                    <td class="date">Date</td>
-                    <td class="sol">Sol</td>
-                    <td class="season">Season</td>
-                    <td class="maxTemp">Max.</td>
-                    <td class="avgTemp">Avg.</td>
-                    <td class="minTemp">Min.</td>
-                    <td class="maxWind">Max.</td>
-                    <td class="avgWind">Avg.</td>
-                    <td class="minWind">Min.</td>
-                    <td class="dirWind">Direction</td>
-                    <td class="maxPa">Max.</td>
-                    <td class="avgPa">Avg.</td>
-                    <td class="minPa">Min.</td>
-                </tr>
-                <tr id="tblData">
-                    <td class="date" id="dateVal"></td>
-                    <td class="sol" id="solVal"></td>
-                    <td class="season" id="seasonVal"></td>
-                    <td class="maxTemp" id="maxTempVal"></td>
-                    <td class="avgTemp" id="avgTempVal"></td>
-                    <td class="minTemp" id="minTempVal"></td>
-                    <td class="maxWind" id="maxWindVal"></td>
-                    <td class="avgWind" id="avgWindVal"></td>
-                    <td class="minWind" id="minWindVal"></td>
-                    <td class="dirWind" id="dirWindVal"></td>
-                    <td class="maxPa" id="maxPaVal"></td>
-                    <td class="avgPa" id="avgPaVal"></td>
-                    <td class="minPa" id="minPaVal"></td>
-                </tr>
-            </tbody>
-        </table>
-
+            <table id="weatherTable">
+                <thead>
+                    <tr>
+                        <th colspan="3">Time</th>
+                        <th colspan="3">Air Temperature (°F | °C)</th>
+                        <th colspan="4">Wind Speed (mph | m/s)</th>
+                        <th colspan="3">Pressure (Pa)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tblTop">
+                        <td class="date">Date</td>
+                        <td class="sol">Sol</td>
+                        <td class="season">Season</td>
+                        <td class="maxTemp">Max.</td>
+                        <td class="avgTemp">Avg.</td>
+                        <td class="minTemp">Min.</td>
+                        <td class="maxWind">Max.</td>
+                        <td class="avgWind">Avg.</td>
+                        <td class="minWind">Min.</td>
+                        <td class="dirWind">Direction</td>
+                        <td class="maxPa">Max.</td>
+                        <td class="avgPa">Avg.</td>
+                        <td class="minPa">Min.</td>
+                    </tr>
+                    <tr id="tblData">
+                        <td class="date" id="dateVal"></td>
+                        <td class="sol" id="solVal"></td>
+                        <td class="season" id="seasonVal"></td>
+                        <td class="maxTemp" id="maxTempVal"></td>
+                        <td class="avgTemp" id="avgTempVal"></td>
+                        <td class="minTemp" id="minTempVal"></td>
+                        <td class="maxWind" id="maxWindVal"></td>
+                        <td class="avgWind" id="avgWindVal"></td>
+                        <td class="minWind" id="minWindVal"></td>
+                        <td class="dirWind" id="dirWindVal"></td>
+                        <td class="maxPa" id="maxPaVal"></td>
+                        <td class="avgPa" id="avgPaVal"></td>
+                        <td class="minPa" id="minPaVal"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </span>
     </main>
+
+    <!-- Content carousel that allows you to select multiple panels -->
+    <div class="carousel carousel-slider center">
+        <div class="carousel-fixed-item center">
+          <a class="btn waves-effect white grey-text darken-text-2">button</a>
+        </div>
+        <div class="carousel-item red white-text" id="firstPanelDate" href="#one!">
+          <h2>First Panel</h2>
+          <p class="white-text" id="firstPanelSol">This is your first panel</p>
+        </div>
+        <div class="carousel-item amber white-text" id="secondPanelDate" href="#two!">
+          <h2>Second Panel</h2>
+          <p class="white-text" id="secondPanelSol">This is your second panel</p>
+        </div>
+        <div class="carousel-item green white-text" id="thirdPanelDate" href="#three!">
+          <h2>Third Panel</h2>
+          <p class="white-text" id="thridPanelSol">This is your third panel</p>
+        </div>
+        <div class="carousel-item blue white-text" id="fourthPanelDate" href="#four!">
+          <h2>Fourth Panel</h2>
+          <p class="white-text" id="fourthPanelSol">This is your fourth panel</p>
+        </div>
+      </div>
 
     <footer>
 
     </footer>
-    
+
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/iJrCuZN.jpg');
+            height: 100vh;
+            background-position: left;
+            background-size: cover;
+        }
+    </style>
+
 </body>
 </html>
