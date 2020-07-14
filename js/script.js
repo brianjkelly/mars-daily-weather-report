@@ -1,8 +1,17 @@
 /*----- constants -----*/
 
+var d = new Date();
+var date = d.getDate();
+var month = d.getMonth() + 1;
+var monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var dateStr = monthArr[month] + " " + date;
+
 /*----- app's state (variables) -----*/
 
 let weatherData;
+
+// Define variable that will be assigned the sol_key for the most recent sol
+let $recentSol;
 
 /*----- cached element references -----*/
 
@@ -29,10 +38,33 @@ function handleGetData() {
         url:'https://api.nasa.gov/insight_weather/?api_key=p8oOGx28D5rYdVoINo3rcPBlOBXpWjI4AcexcORz&feedtype=json&ver=1.0'
     }).then(
         (data) => {
-            console.log(data);
+            weatherData = data;
+            console.log(weatherData);
         },
         (error) => {
             console.log('bad request: ', error);
         }
     )
 };
+
+function render() {
+
+    // will eventually need to generate a date based on user selection of sol
+    $date.html(dateStr);
+
+    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-1];
+    $sol.html(recentSol);
+    $season.html(weatherData[recentSol].Season);
+    $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
+    $avgTemp.html(Math.floor(weatherData[recentSol].AT.av));
+    $minTemp.html(Math.floor(weatherData[recentSol].AT.mn));
+    $maxWind.html(Math.floor(weatherData[recentSol].HWS.mx));
+    $avgWind.html(Math.floor(weatherData[recentSol].HWS.av));
+    $minWind.html(Math.floor(weatherData[recentSol].HWS.mn));
+    // the wind direction most_common has a chance of returning back 'null'
+    $dirWind.html(weatherData[recentSol].WD.most_common.compass_point);
+    $maxPa.html(Math.floor(weatherData[recentSol].PRE.mx));
+    $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
+    $minPa.html(Math.floor(weatherData[recentSol].PRE.mn));
+
+}
