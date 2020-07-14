@@ -6,6 +6,12 @@ var month = d.getMonth() + 1;
 var monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var dateStr = monthArr[month] + " " + date;
 
+// carousel functionality
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+
 /*----- app's state (variables) -----*/
 
 let weatherData;
@@ -39,7 +45,7 @@ function handleGetData() {
     }).then(
         (data) => {
             weatherData = data;
-            console.log(weatherData);
+            render();
         },
         (error) => {
             console.log('bad request: ', error);
