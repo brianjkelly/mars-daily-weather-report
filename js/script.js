@@ -2,15 +2,10 @@
 
 var d = new Date();
 var date = d.getDate();
-var month = d.getMonth() + 1;
+var month = d.getMonth();
 var monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var dateStr = monthArr[month] + " " + date;
 
-// carousel functionality
-$('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
-  });
 
 /*----- app's state (variables) -----*/
 
@@ -35,7 +30,18 @@ const $maxPa = $('#maxPaVal');
 const $avgPa = $('#avgPaVal');
 const $minPa = $('#minPaVal');
 
+// carousel element references
+
+const $fpDate = $('#firstPanelDate');
+const $fpSol = $('#firstPanelSol');
+const $spDate = $('#secondPanelDate');
+const $spSol = $('#secondPanelSol');
+const $tpDate = $('#thirdPanelDate');
+const $tpSol = $('#thirdPanelSol');
+
 /*----- event listeners -----*/
+
+$('#btnGet').on('click', handleGetData);
 
 /*----- functions -----*/
 
@@ -73,4 +79,15 @@ function render() {
     $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
     $minPa.html(Math.floor(weatherData[recentSol].PRE.mn));
 
+
 }
+
+// when the page loads the most recent date's data should be displayed initially
+handleGetData();
+
+// carousel functionality and initialization
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+
+  });
