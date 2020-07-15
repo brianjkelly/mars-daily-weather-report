@@ -6,6 +6,16 @@ var month = d.getMonth();
 var monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var dateStr = monthArr[month] + " " + date;
 
+var d2 = new Date(d.getTime() - 86400000);
+var date2 = d2.getDate();
+var month2 = d2.getMonth();
+var dateStr2 = monthArr[month2] + " " + date2;
+
+var d3 = new Date (d.getTime() - (86400000 * 2));
+var date3 = d3.getDate();
+var month3 = d3.getMonth();
+var dateStr3 = monthArr[month3] + " " + date3;
+
 
 /*----- app's state (variables) -----*/
 
@@ -79,15 +89,76 @@ function render() {
     $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
     $minPa.html(Math.floor(weatherData[recentSol].PRE.mn));
 
+}
+
+function setCar() {
+
+    $fpDate.html(dateStr);
+    $fpSol.html("Sol " + recentSol);
+
+    // need to come back and ensure that if sol = 1 or 2 that these displays will be accurate
+    $spDate.html(dateStr2);
+    $spSol.html("Sol " + (recentSol-1));
+
+    $tpDate.html(dateStr3);
+    $tpSol.html("Sol " + (recentSol-2));
 
 }
 
+
 // when the page loads the most recent date's data should be displayed initially
 handleGetData();
+
+// once data is pulled in then set up the carousel
+setCar();
 
 // carousel functionality and initialization
 $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
 
+    
   });
+
+  function render2() {
+
+    // will eventually need to generate a date based on user selection of sol
+    $date.html(dateStr2);
+
+    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-2];
+    $sol.html(recentSol);
+    $season.html(weatherData[recentSol].Season);
+    $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
+    $avgTemp.html(Math.floor(weatherData[recentSol].AT.av));
+    $minTemp.html(Math.floor(weatherData[recentSol].AT.mn));
+    $maxWind.html(Math.floor(weatherData[recentSol].HWS.mx));
+    $avgWind.html(Math.floor(weatherData[recentSol].HWS.av));
+    $minWind.html(Math.floor(weatherData[recentSol].HWS.mn));
+    // the wind direction most_common has a chance of returning back 'null'
+    $dirWind.html(weatherData[recentSol].WD.most_common.compass_point);
+    $maxPa.html(Math.floor(weatherData[recentSol].PRE.mx));
+    $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
+    $minPa.html(Math.floor(weatherData[recentSol].PRE.mn));
+
+}
+
+function render3() {
+
+    // will eventually need to generate a date based on user selection of sol
+    $date.html(dateStr3);
+
+    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-3];
+    $sol.html(recentSol);
+    $season.html(weatherData[recentSol].Season);
+    $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
+    $avgTemp.html(Math.floor(weatherData[recentSol].AT.av));
+    $minTemp.html(Math.floor(weatherData[recentSol].AT.mn));
+    $maxWind.html(Math.floor(weatherData[recentSol].HWS.mx));
+    $avgWind.html(Math.floor(weatherData[recentSol].HWS.av));
+    $minWind.html(Math.floor(weatherData[recentSol].HWS.mn));
+    // the wind direction most_common has a chance of returning back 'null'
+    $dirWind.html(weatherData[recentSol].WD.most_common.compass_point);
+    $maxPa.html(Math.floor(weatherData[recentSol].PRE.mx));
+    $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
+    $minPa.html(Math.floor(weatherData[recentSol].PRE.mn));
+};
