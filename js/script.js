@@ -51,7 +51,10 @@ const $tpSol = $('#thirdPanelSol');
 
 /*----- event listeners -----*/
 
-$('#btnGet').on('click', handleGetData);
+$('#btnGet1').on('click', render);
+$('#btnGet2').on('click', render2);
+$('#btnGet3').on('click', render3);
+
 
 /*----- functions -----*/
 
@@ -62,6 +65,7 @@ function handleGetData() {
         (data) => {
             weatherData = data;
             render();
+            setCar();
         },
         (error) => {
             console.log('bad request: ', error);
@@ -94,23 +98,19 @@ function render() {
 function setCar() {
 
     $fpDate.html(dateStr);
-    $fpSol.html("Sol " + recentSol);
+    $fpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-1]);
 
-    // need to come back and ensure that if sol = 1 or 2 that these displays will be accurate
     $spDate.html(dateStr2);
-    $spSol.html("Sol " + (recentSol-1));
+    $spSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-2]);
 
     $tpDate.html(dateStr3);
-    $tpSol.html("Sol " + (recentSol-2));
+    $tpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-3]);
 
 }
 
 
 // when the page loads the most recent date's data should be displayed initially
 handleGetData();
-
-// once data is pulled in then set up the carousel
-setCar();
 
 // carousel functionality and initialization
 $('.carousel.carousel-slider').carousel({
