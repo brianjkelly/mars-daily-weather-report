@@ -28,8 +28,81 @@
     <main>
         <span class="blue-grey-text text-lighten-5">
             <h2>Daily Weather Report</h2>
+        </span>
+        <div class="tableFlex">
+            <div class="time">
+                <span class="blue-grey-text text-lighten-5">
+                    <h5>Time</h5>
+                    <table>
+                        <tr>
+                            <td>Date</td>
+                            <td>Sol</td>
+                            <td>Season</td>
+                        </tr>
+                        <tr>
+                            <td id="dateVal"></td>
+                            <td id="solVal"></td>
+                            <td id="seasonVal">Season</td>
+                        </tr>
+                    </table>
+                </span>
+            </div>
+            <div class="airTemp">
+                <span class="blue-grey-text text-lighten-5">
+                    <h5>Air Temperature (°F | °C)</h5>
+                    <table>
+                        <tr>
+                            <td>Max.</td>
+                            <td>Avg.</td>
+                            <td>Min.</td>
+                        </tr>
+                        <tr>
+                            <td id="maxTempVal"></td>
+                            <td id="avgTempVal"></td>
+                            <td id="minTempVal"></td>
+                        </tr>
+                    </table>
+                </span>
+            </div>
+            <div class="windSpeed">
+                <span class="blue-grey-text text-lighten-5">
+                    <h5>Wind Speed (mph | m/s)</h5>
+                    <table>
+                        <tr>
+                            <td>Max.</td>
+                            <td>Avg.</td>
+                            <td>Min.</td>
+                            <td>Direction</td>
+                        </tr>
+                        <tr>
+                            <td id="maxWindVal"></td>
+                            <td id="avgWindVal"></td>
+                            <td id="minWindVal"></td>
+                            <td id="dirWindVal"></td>
+                        </tr>
+                    </table>
+                </span>
+            </div>
+            <div class="pressure">
+                <span class="blue-grey-text text-lighten-5">
+                    <h5>Pressure (Pa)</h5>
+                    <table>
+                        <tr>
+                            <td>Max.</td>
+                            <td>Avg.</td>
+                            <td>Min.</td>
+                        </tr>
+                        <tr>
+                            <td id="maxPaVal"></td>
+                            <td id="avgPaVal"></td>
+                            <td id="minPaVal"></td> 
+                        </tr>
+                    </table>
+                </span>
+            </div>
+        </div>
 
-            <table id="weatherTable">
+            <!-- <table id="weatherTable">
                 <thead>
                     <tr>
                         <th colspan="3">Time</th>
@@ -70,8 +143,8 @@
                         <td class="minPa" id="minPaVal"></td>
                     </tr>
                 </tbody>
-            </table>
-        </span>
+            </table> -->
+        
 
         
             <!-- Content carousel that allows you to select multiple panels -->
