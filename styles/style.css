@@ -79,5 +79,7 @@ body {
     .tableFlex {
         flex-direction: column;
     }
-
+    #btnNext {
+        visibility: hidden;
+    }
 }

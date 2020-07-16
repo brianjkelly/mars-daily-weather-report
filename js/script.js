@@ -55,6 +55,7 @@ const $tpSol = $('#thirdPanelSol');
 $('#btnGet1').on('click', render);
 $('#btnGet2').on('click', render2);
 $('#btnGet3').on('click', render3);
+$('#btnNext').on('click', nextCar);
 
 
 /*----- functions -----*/
@@ -160,3 +161,7 @@ function render3() {
     $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
     $minPa.html(Math.floor(weatherData[recentSol].PRE.mn));
 };
+
+function nextCar() {
+    instance.next(1);
+}
