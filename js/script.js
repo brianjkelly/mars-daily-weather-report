@@ -42,6 +42,7 @@ const $minPa = $('#minPaVal');
 
 // carousel element references
 
+const $carousel = $('.carousel');
 const $fpDate = $('#firstPanelDate');
 const $fpSol = $('#firstPanelSol');
 const $spDate = $('#secondPanelDate');
@@ -111,6 +112,11 @@ function setCar() {
 handleGetData();
 
 // carousel functionality and initialization
+// initialize modal
+$carousel.carousel();
+const instance = M.Carousel.getInstance($carousel);
+
+
 $('.carousel.carousel-slider').carousel({
     indicators: true,
     fullWidth: true 
