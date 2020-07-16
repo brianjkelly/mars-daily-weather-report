@@ -1,14 +1,83 @@
 h1 {
-    background-color: rgba(72, 72, 72, 0.5);
+    background-color: rgba(65, 98, 109, 0.7);
     margin: 0 auto;
     padding: 5px;
 } 
- 
+
+.subHead {
+    display: flex;
+    justify-content: center;
+}
 
 h1, h2, p {
     font-family: 'Orbitron', sans-serif;
 };
 
 table {
-    font-size: 30px;
+    font-size: 25px;
+}
+
+.tableFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.time, .airTemp, .windSpeed, .pressure {
+    background-color: rgba(72, 72, 72, 0.5);
+}
+
+h5 {
+    padding: 5px;
+}
+
+.seeBelow {
+    display: flex;
+    justify-content: center;
+}
+
+.far:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: orange;
+}
+
+.cel:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: orange;
+}
+
+.mph:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: orange;
+}
+
+.ms:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: orange;
+}
+
+.sTitle {
+    background-color: rgba(65, 98, 109, 0.7);
+    margin-top: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+@media screen and (max-width: 780px) {
+    .tableFlex {
+        flex-direction: column;
+    }
+
 }
