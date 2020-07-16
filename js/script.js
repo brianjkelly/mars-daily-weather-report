@@ -77,11 +77,14 @@ function handleGetData() {
 
 function render() {
 
+    
+
     $date.html(dateStr);
 
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-1];
     $sol.html(recentSol);
-    $season.html(weatherData[recentSol].Season);
+    $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
+    
     $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
     $avgTemp.html(Math.floor(weatherData[recentSol].AT.av));
     $minTemp.html(Math.floor(weatherData[recentSol].AT.mn));
@@ -129,7 +132,7 @@ $('.carousel.carousel-slider').carousel({
 
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-2];
     $sol.html(recentSol);
-    $season.html(weatherData[recentSol].Season);
+    $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
     $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
     $avgTemp.html(Math.floor(weatherData[recentSol].AT.av));
     $minTemp.html(Math.floor(weatherData[recentSol].AT.mn));
@@ -149,7 +152,7 @@ function render3() {
 
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-3];
     $sol.html(recentSol);
-    $season.html(weatherData[recentSol].Season);
+    $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
     $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
     $avgTemp.html(Math.floor(weatherData[recentSol].AT.av));
     $minTemp.html(Math.floor(weatherData[recentSol].AT.mn));
