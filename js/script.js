@@ -57,7 +57,6 @@ $('#btnGet2').on('click', render2);
 $('#btnGet3').on('click', render3);
 $('#btnNext').on('click', nextCar);
 
-
 /*----- functions -----*/
 
 function handleGetData() {
@@ -76,15 +75,10 @@ function handleGetData() {
 };
 
 function render() {
-
-    
-
     $date.html(dateStr);
-
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-1];
     $sol.html(recentSol);
-    $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
-    
+    $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1)); 
     $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
     $avgTemp.html(Math.floor(weatherData[recentSol].AT.av));
     $minTemp.html(Math.floor(weatherData[recentSol].AT.mn));
@@ -99,7 +93,6 @@ function render() {
 }
 
 function setCar() {
-
     $fpDate.html(dateStr);
     $fpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-1]);
 
@@ -108,7 +101,6 @@ function setCar() {
 
     $tpDate.html(dateStr3);
     $tpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-3]);
-
 }
 
 
@@ -127,9 +119,7 @@ $('.carousel.carousel-slider').carousel({
   });
 
   function render2() {
-
     $date.html(dateStr2);
-
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-2];
     $sol.html(recentSol);
     $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
@@ -147,9 +137,7 @@ $('.carousel.carousel-slider').carousel({
 }
 
 function render3() {
-
     $date.html(dateStr3);
-
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-3];
     $sol.html(recentSol);
     $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
@@ -167,4 +155,8 @@ function render3() {
 
 function nextCar() {
     instance.next(1);
-}
+    $('.carousel.carousel-slider').carousel({
+        indicators: true,
+        fullWidth: true 
+      });
+};

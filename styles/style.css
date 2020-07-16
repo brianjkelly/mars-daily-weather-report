@@ -2,6 +2,8 @@ h1 {
     background-color: rgba(65, 98, 109, 0.7);
     margin: 0 auto;
     padding: 5px;
+    display: flex;
+    justify-content: center;
 } 
 
 .subHead {
@@ -34,30 +36,6 @@ h5 {
 .seeBelow {
     display: flex;
     justify-content: center;
-}
-
-.far:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    color: orange;
-}
-
-.cel:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    color: orange;
-}
-
-.mph:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    color: orange;
-}
-
-.ms:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    color: orange;
 }
 
 .sTitle {
