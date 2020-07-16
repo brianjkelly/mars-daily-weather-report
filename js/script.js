@@ -75,7 +75,6 @@ function handleGetData() {
 
 function render() {
 
-    // will eventually need to generate a date based on user selection of sol
     $date.html(dateStr);
 
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-1];
@@ -87,7 +86,6 @@ function render() {
     $maxWind.html(Math.floor(weatherData[recentSol].HWS.mx));
     $avgWind.html(Math.floor(weatherData[recentSol].HWS.av));
     $minWind.html(Math.floor(weatherData[recentSol].HWS.mn));
-    // the wind direction most_common has a chance of returning back 'null'
     $dirWind.html(weatherData[recentSol].WD.most_common.compass_point);
     $maxPa.html(Math.floor(weatherData[recentSol].PRE.mx));
     $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
@@ -114,15 +112,12 @@ handleGetData();
 
 // carousel functionality and initialization
 $('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
-
-    
+    indicators: true,
+    fullWidth: true 
   });
 
   function render2() {
 
-    // will eventually need to generate a date based on user selection of sol
     $date.html(dateStr2);
 
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-2];
@@ -134,7 +129,6 @@ $('.carousel.carousel-slider').carousel({
     $maxWind.html(Math.floor(weatherData[recentSol].HWS.mx));
     $avgWind.html(Math.floor(weatherData[recentSol].HWS.av));
     $minWind.html(Math.floor(weatherData[recentSol].HWS.mn));
-    // the wind direction most_common has a chance of returning back 'null'
     $dirWind.html(weatherData[recentSol].WD.most_common.compass_point);
     $maxPa.html(Math.floor(weatherData[recentSol].PRE.mx));
     $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));
@@ -144,7 +138,6 @@ $('.carousel.carousel-slider').carousel({
 
 function render3() {
 
-    // will eventually need to generate a date based on user selection of sol
     $date.html(dateStr3);
 
     recentSol = weatherData.sol_keys[weatherData.sol_keys.length-3];
@@ -156,7 +149,6 @@ function render3() {
     $maxWind.html(Math.floor(weatherData[recentSol].HWS.mx));
     $avgWind.html(Math.floor(weatherData[recentSol].HWS.av));
     $minWind.html(Math.floor(weatherData[recentSol].HWS.mn));
-    // the wind direction most_common has a chance of returning back 'null'
     $dirWind.html(weatherData[recentSol].WD.most_common.compass_point);
     $maxPa.html(Math.floor(weatherData[recentSol].PRE.mx));
     $avgPa.html(Math.floor(weatherData[recentSol].PRE.av));

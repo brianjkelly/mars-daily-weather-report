@@ -1,3 +1,14 @@
+h1 {
+    background-color: rgba(72, 72, 72, 0.5);
+    margin: 0 auto;
+    padding: 5px;
+} 
+ 
+
 h1, h2, p {
     font-family: 'Orbitron', sans-serif;
 };
+
+table {
+    font-size: 30px;
+}
