@@ -25,4 +25,5 @@ A web app for gathering and displaying up-to-date weather data from Mars!
 1. A selection feature for Wind Temperature to convert °F to °C
 2. A selection feature for Wind Speed to convert m/s to mph
 3. Enhanced styling and aesthetic for data display
+4. Allow for data to pull in for current date if data is available
 
