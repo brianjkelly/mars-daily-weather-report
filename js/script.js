@@ -1,20 +1,21 @@
 /*----- constants -----*/
 
 var d = new Date();
-var date = d.getDate();
-var month = d.getMonth();
+var d2 = new Date(d.getTime() - 86400000);
+var date = d2.getDate();
+var month = d2.getMonth();
 var monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var dateStr = monthArr[month] + " " + date;
 
-var d2 = new Date(d.getTime() - 86400000);
-var date2 = d2.getDate();
-var month2 = d2.getMonth();
-var dateStr2 = monthArr[month2] + " " + date2;
-
-var d3 = new Date (d.getTime() - (86400000 * 2));
+var d3 = new Date(d.getTime() - (86400000 * 2));
 var date3 = d3.getDate();
 var month3 = d3.getMonth();
 var dateStr3 = monthArr[month3] + " " + date3;
+
+var d4 = new Date (d.getTime() - (86400000 * 3));
+var date4 = d4.getDate();
+var month4 = d4.getMonth();
+var dateStr4 = monthArr[month4] + " " + date4;
 
 
 /*----- app's state (variables) -----*/
@@ -61,7 +62,7 @@ $('#btnNext').on('click', nextCar);
 
 function handleGetData() {
     $.ajax({
-        url:'https://api.nasa.gov/insight_weather/?api_key=uiDwvd5f5QLoIesGgUkYHnIpupEgCfdSdsaTFMgJ&feedtype=json&ver=1.0'
+        url:`https://api.nasa.gov/insight_weather/?api_key=${config.API_KEY}&feedtype=json&ver=1.0`
     }).then(
         (data) => {
             weatherData = data;
@@ -76,7 +77,7 @@ function handleGetData() {
 
 function render() {
     $date.html(dateStr);
-    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-1];
+    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-2];
     $sol.html(recentSol);
     $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1)); 
     $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
@@ -94,13 +95,13 @@ function render() {
 
 function setCar() {
     $fpDate.html(dateStr);
-    $fpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-1]);
+    $fpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-2]);
 
-    $spDate.html(dateStr2);
-    $spSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-2]);
+    $spDate.html(dateStr3);
+    $spSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-3]);
 
-    $tpDate.html(dateStr3);
-    $tpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-3]);
+    $tpDate.html(dateStr4);
+    $tpSol.html("Sol " + weatherData.sol_keys[weatherData.sol_keys.length-4]);
 }
 
 
@@ -119,8 +120,8 @@ $('.carousel.carousel-slider').carousel({
   });
 
   function render2() {
-    $date.html(dateStr2);
-    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-2];
+    $date.html(dateStr3);
+    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-3];
     $sol.html(recentSol);
     $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
     $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
@@ -137,8 +138,8 @@ $('.carousel.carousel-slider').carousel({
 }
 
 function render3() {
-    $date.html(dateStr3);
-    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-3];
+    $date.html(dateStr4);
+    recentSol = weatherData.sol_keys[weatherData.sol_keys.length-4];
     $sol.html(recentSol);
     $season.html(weatherData[recentSol].Season.charAt(0).toUpperCase() + weatherData[recentSol].Season.slice(1));
     $maxTemp.html(Math.floor(weatherData[recentSol].AT.mx));
