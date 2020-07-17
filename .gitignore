@@ -1,2 +1,2 @@
 # add relative file path to config.js
-./js/config.js
+/js/config.js
