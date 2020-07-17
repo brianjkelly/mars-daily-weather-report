@@ -61,7 +61,7 @@ $('#btnNext').on('click', nextCar);
 
 function handleGetData() {
     $.ajax({
-        url:`https://project1-629.herokuapp.com/brian`
+        url:'https://api.nasa.gov/insight_weather/?api_key=uiDwvd5f5QLoIesGgUkYHnIpupEgCfdSdsaTFMgJ&feedtype=json&ver=1.0'
     }).then(
         (data) => {
             weatherData = data;
