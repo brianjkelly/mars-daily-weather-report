@@ -4,9 +4,9 @@ A web app for gathering and displaying up-to-date weather data from Mars!
 
 # Screenshots
 
-![screenshot 0](https://imgur.com/3ZclD6f/)
-![screenshot 1](https://imgur.com/5lXuTCQ/)
-![screenshot 2](https://imgur.com/JPm1Ov7/)
+![screenshot 0](https://i.imgur.com/3ZclD6f.png)
+![screenshot 1](https://i.imgur.com/5lXuTCQ.png)
+![screenshot 2](https://i.imgur.com/JPm1Ov7.png)
 
 # Technologies
 
