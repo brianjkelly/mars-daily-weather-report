@@ -62,7 +62,7 @@ $('#btnNext').on('click', nextCar);
 
 function handleGetData() {
     $.ajax({
-        url:`https://api.nasa.gov/insight_weather/?api_key=${config.API_KEY}&feedtype=json&ver=1.0`
+        url:`https://api.nasa.gov/insight_weather/?api_key=p8oOGx28D5rYdVoINo3rcPBlOBXpWjI4AcexcORz&feedtype=json&ver=1.0`
     }).then(
         (data) => {
             weatherData = data;
